@@ -32,10 +32,10 @@ export default async function signin(
         })
       );
       res.status(201);
-      res.end();
+      res.json({});
     }
   } else {
     res.status(402);
-    res.end();
+    res.json({});
   }
 }

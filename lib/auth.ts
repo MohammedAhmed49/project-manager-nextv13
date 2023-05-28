@@ -14,6 +14,7 @@ export const createJWT = (user: { id: string; email: string }) => {
   const exp = iat + 60 * 60 * 24 * 7;
 
   return new SignJWT({ payload: { id: user.id, email: user.email } })
+    .setProtectedHeader({ alg: "HS256", typ: "JWT" })
     .setIssuedAt(iat)
     .setExpirationTime(exp)
     .setNotBefore(iat)
